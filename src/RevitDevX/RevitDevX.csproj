@@ -34,12 +34,15 @@
   <ItemGroup>
     <Reference Include="RevitAPI">
       <HintPath>..\..\lib\RevitAPI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI">
       <HintPath>..\..\lib\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -54,13 +57,32 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="UserControl1.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Resources\IconsDictionary.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Page Include="UI\ElementPropertiesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="PluginApplication.cs" />
+    <Compile Include="PluginBase.cs" />
+    <Compile Include="Resources\IconsDictionary.xaml.cs">
+      <DependentUpon>IconsDictionary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RevitCommands\BrowserRevitCommand.cs" />
+    <Compile Include="UI\BindableBase.cs" />
+    <Compile Include="UI\ElementPropertiesView.xaml.cs">
+      <DependentUpon>ElementPropertiesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ElementPropertiesViewModel.cs" />
+    <Compile Include="UI\MainViewModel.cs" />
+    <Compile Include="UI\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +107,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="RevitDevX.addin" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

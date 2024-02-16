@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RevitDevX
+namespace RevitDevX.UI
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for ElementPropertiesView.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class ElementPropertiesView : UserControl
     {
-        public UserControl1()
+        public ElementPropertiesView()
         {
             InitializeComponent();
         }

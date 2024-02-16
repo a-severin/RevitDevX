@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>  
+  <AddIn Type="Application">
+    <Name>RevitDevX</Name>
+    <Assembly>C:\ProgramData\Autodesk\Revit\Addins\2023\RevitDevX\RevitDevX.dll</Assembly>
+    <FullClassName>RevitDevX.PluginApplication</FullClassName>
+    <AddInId>A1686B77-16DF-4F7E-836F-650061590521</AddInId>
+    <VendorId>Anatolii Severin</VendorId>
+    <VendorDescription>Anatolii Severin</VendorDescription>
+  </AddIn>
+</RevitAddIns>
