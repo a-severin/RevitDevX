@@ -69,9 +69,12 @@ namespace RevitDevX.UI
                 {
                     var symbolId = symbolIdParameter.AsElementId();
                     var symbol = _application.ActiveUIDocument.Document.GetElement(symbolId);
-                    foreach (Autodesk.Revit.DB.Parameter p in symbol.Parameters.OfType<Autodesk.Revit.DB.Parameter>().OrderBy(_ => _.Definition.Name))
+                    if (symbol != null)
                     {
-                        _vm.SymbolParameters.Parameters.Add(new Parameter(p));
+                        foreach (Autodesk.Revit.DB.Parameter p in symbol.Parameters.OfType<Autodesk.Revit.DB.Parameter>().OrderBy(_ => _.Definition?.Name))
+                        {
+                            _vm.SymbolParameters.Parameters.Add(new Parameter(p));
+                        }
                     }
                 }
             }
