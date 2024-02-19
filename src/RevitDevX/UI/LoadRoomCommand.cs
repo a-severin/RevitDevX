@@ -41,7 +41,13 @@ namespace RevitDevX.UI
                     return;
                 }
 
-                var segments = room.GetBoundarySegments(new SpatialElementBoundaryOptions());
+                var segments = room.GetBoundarySegments(
+                    new SpatialElementBoundaryOptions
+                    {
+                        SpatialElementBoundaryLocation = _vm.SpatialElementBoundaryLocation,
+                        StoreFreeBoundaryFaces = _vm.StoreFreeBoundaryFaces
+                    }
+                );
                 if (null != segments)
                 {
                     foreach (var segmentList in segments)
