@@ -8,9 +8,10 @@
     xmlns:res="clr-namespace:RevitDevX.Resources"
     Title="Browser"
     Width="1000"
-    Height="800"
+    Height="850"
     d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
     Icon="{DynamicResource BrowserIcon}"
+    Topmost="True"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.Resources>
@@ -28,6 +29,9 @@
             </TabItem>
             <TabItem Header="Selected Room">
                 <local:RoomView DataContext="{Binding Path=RoomViewModel}" />
+            </TabItem>
+            <TabItem Header="All Rooms">
+                <local:AllRoomsView DataContext="{Binding Path=AllRoomsViewModel}" />
             </TabItem>
         </TabControl>
     </Grid>

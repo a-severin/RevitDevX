@@ -12,9 +12,11 @@ namespace RevitDevX.UI
 
             ElementViewModel = new ElementViewModel(application);
             RoomViewModel = new RoomViewModel(application);
+            AllRoomsViewModel = new AllRoomsViewModel(application);
         }
 
         public ElementViewModel ElementViewModel { get; }
         public RoomViewModel RoomViewModel { get; }
+        public AllRoomsViewModel AllRoomsViewModel { get; }
     }
 }

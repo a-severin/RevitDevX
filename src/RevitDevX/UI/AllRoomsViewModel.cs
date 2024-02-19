@@ -6,19 +6,23 @@ using System.Windows.Input;
 
 namespace RevitDevX.UI
 {
-    public class RoomViewModel : BindableBase, IRoomPresenter
+    public class AllRoomsViewModel : BindableBase
     {
-        public RoomViewModel(UIApplication application)
-        {
-            Load = new LoadRoomCommand(application, this);
-            SelectAll = new SelectAllElementsCommand(application, this);
-        }
+        private RoomPresenter _selectedRoom;
 
-        public ObservableCollection<BoundarySegmentPresenter> BoundarySegments { get; } = new ObservableCollection<BoundarySegmentPresenter>();
+        public AllRoomsViewModel(UIApplication application)
+        {
+            Load = new LoadAllRoomsCommand(application, this);
+        }
         public ICommand Load { get; }
-        public ICommand SelectAll { get; }
         public SpatialElementBoundaryLocation SpatialElementBoundaryLocation { get; set; }
         public Array SpatialElementBoundaryLocations { get; } = Enum.GetValues(typeof(SpatialElementBoundaryLocation));
         public bool StoreFreeBoundaryFaces { get; set; }
+
+        public ObservableCollection<LevelPresenter> Levels { get; } = new ObservableCollection<LevelPresenter>();
+        public RoomPresenter SelectedRoom {
+            get => _selectedRoom;
+            set => Set(ref _selectedRoom, value);
+        }
     }
 }

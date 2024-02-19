@@ -8,9 +8,9 @@ namespace RevitDevX.UI
     public class SelectAllElementsCommand : ICommand
     {
         private readonly UIApplication _application;
-        private readonly RoomViewModel _vm;
+        private readonly IRoomPresenter _vm;
 
-        public SelectAllElementsCommand(UIApplication application, RoomViewModel vm)
+        public SelectAllElementsCommand(UIApplication application, IRoomPresenter vm)
         {
             _application = application;
             _vm = vm;

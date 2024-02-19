@@ -48,7 +48,7 @@ namespace RevitDevX.UI
                         StoreFreeBoundaryFaces = _vm.StoreFreeBoundaryFaces
                     }
                 );
-                if (null != segments)
+                if (segments != null)
                 {
                     foreach (var segmentList in segments)
                     {
