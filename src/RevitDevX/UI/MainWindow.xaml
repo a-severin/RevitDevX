@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:RevitDevX.UI"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:res="clr-namespace:RevitDevX.Resources"
-    Title="MainWindow"
+    Title="Browser"
     Width="1000"
     Height="800"
     d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
