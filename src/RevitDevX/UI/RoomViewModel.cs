@@ -9,9 +9,11 @@ namespace RevitDevX.UI
         public RoomViewModel(UIApplication application)
         {
             Load = new LoadRoomCommand(application, this);
+            SelectAll = new SelectAllElementsCommand(application, this);
         }
 
-        public ICommand Load { get; }
         public ObservableCollection<BoundarySegmentPresenter> BoundarySegments { get; } = new ObservableCollection<BoundarySegmentPresenter>();
+        public ICommand Load { get; }
+        public ICommand SelectAll { get; }
     }
 }

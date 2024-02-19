@@ -15,9 +15,11 @@ namespace RevitDevX.UI
             Properties.Add(new Property { Name = nameof(element.UniqueId), Value = element.UniqueId });
             Properties.Add(new Property { Name = nameof(element.Name), Value = element.Name });
             Properties.Add(new Property { Name = "Type", Value = element.GetType().Name });
+            Element = element;
         }
 
         public ObservableCollection<Property> Properties { get; } = new ObservableCollection<Property>();
         public ICommand Select { get; }
+        public Element Element { get; }
     }
 }

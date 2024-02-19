@@ -65,6 +65,7 @@
       <DependentUpon>RoomView.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\RoomViewModel.cs" />
+    <Compile Include="UI\SelectAllElementsCommand.cs" />
     <Compile Include="UI\SelectElementCommand.cs" />
     <Page Include="Resources\IconsDictionary.xaml">
       <SubType>Designer</SubType>
