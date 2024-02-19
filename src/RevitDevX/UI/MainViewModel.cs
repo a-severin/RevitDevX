@@ -1,7 +1,4 @@
 ﻿using Autodesk.Revit.UI;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RevitDevX.UI
 {
@@ -13,9 +10,11 @@ namespace RevitDevX.UI
         {
             _application = application;
 
-            ElementPropertiesViewModel = new ElementPropertiesViewModel(application);
+            ElementViewModel = new ElementViewModel(application);
+            RoomViewModel = new RoomViewModel(application);
         }
 
-        public ElementPropertiesViewModel ElementPropertiesViewModel { get; }
+        public ElementViewModel ElementViewModel { get; }
+        public RoomViewModel RoomViewModel { get; }
     }
 }

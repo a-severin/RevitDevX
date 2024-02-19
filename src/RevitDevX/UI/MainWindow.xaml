@@ -7,8 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:res="clr-namespace:RevitDevX.Resources"
     Title="MainWindow"
-    Width="800"
-    Height="450"
+    Width="1200"
+    Height="800"
     d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
     Icon="{DynamicResource BrowserIcon}"
     WindowStartupLocation="CenterScreen"
@@ -23,8 +23,11 @@
 
     <Grid>
         <TabControl>
-            <TabItem Header="Element Params">
-                <local:ElementPropertiesView DataContext="{Binding Path=ElementPropertiesViewModel}" />
+            <TabItem Header="Selected Element">
+                <local:ElementView DataContext="{Binding Path=ElementViewModel}" />
+            </TabItem>
+            <TabItem Header="Selected Room">
+                <local:RoomView DataContext="{Binding Path=RoomViewModel}" />
             </TabItem>
         </TabControl>
     </Grid>

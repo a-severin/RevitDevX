@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace RevitDevX.UI
 {
     /// <summary>
-    /// Interaction logic for ElementPropertiesView.xaml
+    /// Interaction logic for RoomView.xaml
     /// </summary>
-    public partial class ElementPropertiesView : UserControl
+    public partial class RoomView : UserControl
     {
-        public ElementPropertiesView()
+        public RoomView()
         {
             InitializeComponent();
         }

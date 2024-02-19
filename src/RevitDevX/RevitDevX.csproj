@@ -57,11 +57,20 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI\BoundarySegmentPresenter.cs" />
+    <Compile Include="UI\LoadElementCommand.cs" />
+    <Compile Include="UI\LoadRoomCommand.cs" />
+    <Compile Include="UI\Property.cs" />
+    <Compile Include="UI\RoomView.xaml.cs">
+      <DependentUpon>RoomView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RoomViewModel.cs" />
+    <Compile Include="UI\SelectElementCommand.cs" />
     <Page Include="Resources\IconsDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\ElementPropertiesView.xaml">
+    <Page Include="UI\ElementView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -76,14 +85,27 @@
     </Compile>
     <Compile Include="RevitCommands\BrowserRevitCommand.cs" />
     <Compile Include="UI\BindableBase.cs" />
-    <Compile Include="UI\ElementPropertiesView.xaml.cs">
-      <DependentUpon>ElementPropertiesView.xaml</DependentUpon>
+    <Compile Include="UI\Parameter.cs" />
+    <Compile Include="UI\ParametersView.xaml.cs">
+      <DependentUpon>ParametersView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\ElementPropertiesViewModel.cs" />
+    <Compile Include="UI\ParametersViewModel.cs" />
+    <Compile Include="UI\ElementView.xaml.cs">
+      <DependentUpon>ElementView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ElementViewModel.cs" />
     <Compile Include="UI\MainViewModel.cs" />
     <Compile Include="UI\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="UI\ParametersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\RoomView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
