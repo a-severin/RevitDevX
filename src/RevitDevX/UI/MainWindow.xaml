@@ -33,6 +33,9 @@
             <TabItem Header="All Rooms">
                 <local:AllRoomsView DataContext="{Binding Path=AllRoomsViewModel}" />
             </TabItem>
+            <TabItem Header="Connectors">
+                <local:ConnectorsView DataContext="{Binding Path=ConnectorsViewModel}" />
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

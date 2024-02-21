@@ -62,6 +62,10 @@
     </Compile>
     <Compile Include="UI\AllRoomsViewModel.cs" />
     <Compile Include="UI\BoundarySegmentPresenter.cs" />
+    <Compile Include="UI\ConnectorsView.xaml.cs">
+      <DependentUpon>ConnectorsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ConnectorsViewModel.cs" />
     <Compile Include="UI\IRoomPresenter.cs" />
     <Compile Include="UI\LevelPresenter.cs" />
     <Compile Include="UI\LoadAllRoomsCommand.cs" />
@@ -80,6 +84,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\AllRoomsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ConnectorsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
