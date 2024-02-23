@@ -28,9 +28,7 @@
         <GroupBox
             Grid.Row="1"
             Header="Properties">
-            <DataGrid
-                IsReadOnly="True"
-                ItemsSource="{Binding Path=Properties}" />
+            <DataGrid ItemsSource="{Binding Path=Properties}" />
         </GroupBox>
 
         <GroupBox

@@ -192,6 +192,27 @@ namespace RevitDevX.UI
                 );
             }
             catch { }
+            try
+            {
+                Properties.Add(new Property
+                {
+                    Name = "X",
+                    Value = c.Origin.X.ToMillimeters().ToString()
+                }
+                );
+                Properties.Add(new Property
+                {
+                    Name = "Y",
+                    Value = c.Origin.Y.ToMillimeters().ToString()
+                }
+                );
+                Properties.Add(new Property
+                {
+                    Name = "Z",
+                    Value = c.Origin.Z.ToMillimeters().ToString()
+                }
+                );
+            } catch { }
         }
 
         public int Id { get; }

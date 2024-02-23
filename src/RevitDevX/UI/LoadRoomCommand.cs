@@ -50,6 +50,7 @@ namespace RevitDevX.UI
                 );
                 if (segments != null)
                 {
+                    var index = 1;
                     foreach (var segmentList in segments)
                     {
                         foreach (var boundarySegment in segmentList)
@@ -59,8 +60,9 @@ namespace RevitDevX.UI
                             {
                                 continue;
                             }
-                            _vm.BoundarySegments.Add(new BoundarySegmentPresenter(_application, element));
+                            _vm.BoundarySegments.Add(new BoundarySegmentPresenter(_application, element, index));
                         }
+                        index++;
                     }
                 }
             }

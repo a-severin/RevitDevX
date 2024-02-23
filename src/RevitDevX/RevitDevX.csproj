@@ -79,6 +79,7 @@
     <Compile Include="UI\RoomViewModel.cs" />
     <Compile Include="UI\SelectAllElementsCommand.cs" />
     <Compile Include="UI\SelectElementCommand.cs" />
+    <Compile Include="UI\UnitsExtensions.cs" />
     <Page Include="Resources\IconsDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

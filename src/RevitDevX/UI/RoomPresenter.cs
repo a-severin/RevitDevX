@@ -27,6 +27,7 @@ namespace RevitDevX.UI
                 );
             if (segments != null)
             {
+                var index = 1;
                 foreach (var segmentList in segments)
                 {
                     foreach (var boundarySegment in segmentList)
@@ -36,8 +37,9 @@ namespace RevitDevX.UI
                         {
                             continue;
                         }
-                        BoundarySegments.Add(new BoundarySegmentPresenter(application, element));
+                        BoundarySegments.Add(new BoundarySegmentPresenter(application, element, index));
                     }
+                    index++;
                 }
             }
         }
