@@ -1,6 +1,8 @@
-﻿using Autodesk.Revit.DB;
+﻿using Autodesk.Revit.Creation;
+using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
@@ -65,6 +67,14 @@ namespace RevitDevX.UI
                     {
                         _vm.SymbolParameters.Parameters.Add(new Parameter(p));
                     }
+
+                    var ge = fi.Symbol.get_Geometry(new Options());
+                    if (ge != null)
+                    {
+                        var bb = ge.GetBoundingBox();
+                        var bbt = $"[{bb.Min.X:F2};{bb.Min.Y:F2};{bb.Min.Z:F2}] - [{bb.Max.X:F2};{bb.Max.Y:F2};{bb.Max.Z:F2}]";
+                        _vm.Properties.Add(new Property { Name = "Symbol Bounding Box", Value = bbt });
+                    }
                 }
                 else
                 {
@@ -79,11 +89,30 @@ namespace RevitDevX.UI
                             {
                                 _vm.SymbolParameters.Parameters.Add(new Parameter(p));
                             }
+
+                            var ge = symbol.get_Geometry(new Options());
+                            if (ge != null)
+                            {
+                                var bb = ge.GetBoundingBox();
+                                var bbt = $"[{bb.Min.X:F2};{bb.Min.Y:F2};{bb.Min.Z:F2}] - [{bb.Max.X:F2};{bb.Max.Y:F2};{bb.Max.Z:F2}]";
+                                _vm.Properties.Add(new Property { Name = "Symbol Bounding Box", Value = bbt });
+                            }
                         }
                     }
                 }
 
+                {
+                    var ge = element.get_Geometry(new Options());
+                    if (ge != null)
+                    {
+                        var bb = ge.GetBoundingBox();
+                        var bbt = $"[{bb.Min.X:F2};{bb.Min.Y:F2};{bb.Min.Z:F2}] - [{bb.Max.X:F2};{bb.Max.Y:F2};{bb.Max.Z:F2}]";
+                        _vm.Properties.Add(new Property { Name = "Bounding Box", Value = bbt });
+                    }
+                }
+
                 _vm.Properties.Add(new Property { Name = nameof(element.LevelId), Value = element.LevelId?.IntegerValue.ToString() });
+
             }
             catch (Exception ex)
             {
